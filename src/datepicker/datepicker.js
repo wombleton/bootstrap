@@ -162,7 +162,10 @@ angular.module('ui.bootstrap.datepicker', ['ui.bootstrap.dateparser', 'ui.bootst
 
   var focusElement = function() {
     $timeout(function() {
-      self.element[0].focus();
+      var el = self.element[0];
+
+      el.scrollIntoView();
+      el.focus();
     }, 0 , false);
   };
 
